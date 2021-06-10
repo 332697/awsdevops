@@ -11,9 +11,10 @@ pipeline {
     stage("build") {
       steps{
           echo "building webhook hi"
-        script {
-        sh 'docker -version'
-        }
+        sh( 
+                                            script: 'docker version',
+                                            returnStdout: true
+                                        )
       }
     }
     
