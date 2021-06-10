@@ -11,7 +11,9 @@ pipeline {
     stage("build") {
       steps{
           echo "building webhook hi"
-        sh "docker -version"
+        script {
+        sh 'docker -version'
+        }
       }
     }
     
@@ -23,6 +25,7 @@ pipeline {
     
     stage("deploy") {
       steps{
+        
          echo "deploying"
       }
     }
