@@ -4,13 +4,13 @@ pipeline {
   stages{
        stage("prep") {
       steps{
-          echo "preparep"
+          echo "prepare webhook"
           checkout scm
       }
     }
     stage("build") {
       steps{
-          echo "building"
+          echo "building webhook"
       }
     }
     
