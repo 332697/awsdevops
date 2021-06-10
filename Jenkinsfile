@@ -4,7 +4,7 @@ pipeline {
   stages{
        stage("prep") {
       steps{
-          echo "prep"
+          echo "preparep"
           checkout scm
       }
     }
