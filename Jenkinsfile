@@ -1,39 +1,13 @@
 pipeline {
-  agent any
-  
-  stages{
-       stage("prep") {
-      steps{
-          echo "prepare webhook"
-          checkout scm
-      }
-    }
-    stage("build") {
-      steps{
-          echo "building webhook hi"
-        script {
-        sh( 
-                                            script: 'docker version',
-                                            returnStdout: true
-                                        )
-        }
-      }
-    }
-    
-    stage("test") {
-      steps{
-         echo "testing webhook.."
-      }
-    }
-    
-    stage("deploy") {
-      steps{
-        
-         echo "deploying"
-      }
-    }
+    agent any
+ stages {
       
-  }
-    
-
+  stage('Run Docker Container on Jenkins') {
+           steps {
+             
+                sh 'docker run hello-world'             
+            }
+        }
+  
+    }
 }
